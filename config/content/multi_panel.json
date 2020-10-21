@@ -18,78 +18,50 @@
               "label": "Text",
               "fields": [
                 {
-                  "label": "Content",
-                  "type": "field_group",
+                  "id": "heading",
+                  "label": "Heading text",
+                  "type": "text",
+                  "required": true
+                },
+                {
+                  "id": "description",
+                  "label": "Description text",
+                  "type": "textarea"
+                },
+                {
+                  "id": "links",
+                  "label": "Links",
+                  "type": "collection",
+                  "max": 2,
                   "fields": [
                     {
-                      "id": "heading",
-                      "label": "Heading text",
+                      "id": "label",
+                      "label": "Label text",
                       "type": "text",
                       "required": true
                     },
                     {
-                      "id": "description",
-                      "label": "Description text",
-                      "type": "textarea"
-                    },
-                    {
-                      "id": "links",
-                      "label": "Links",
-                      "type": "collection",
-                      "max": 2,
-                      "fields": [
-                        {
-                          "id": "label",
-                          "label": "Label text",
-                          "type": "text",
-                          "required": true
-                        },
-                        {
-                          "id": "url",
-                          "label": "Link URL",
-                          "type": "url",
-                          "required": true
-                        }
-                      ]
+                      "id": "url",
+                      "label": "Link URL",
+                      "type": "url",
+                      "required": true
                     }
                   ]
                 },
                 {
-                  "label": "Styling",
-                  "type": "field_group",
-                  "fields": [
+                  "id": "bg_color",
+                  "label": "Background color",
+                  "type": "select",
+                  "default": "primary-lightest",
+                  "options": [
                     {
-                      "id": "text_align",
-                      "label": "Text alignment",
-                      "type": "select",
-                      "default": "left",
-                      "options": [
-                        {
-                          "value": "left",
-                          "label": "Left"
-                        },
-                        {
-                          "value": "center",
-                          "label": "Center"
-                        }
-                      ]
+                      "value": "primary-lightest",
+                      "label": "Background (primary)"
                     },
                     {
-                      "id": "bg_color",
-                      "label": "Background color",
-                      "type": "select",
-                      "default": "primary-lightest",
-                      "options": [
-                        {
-                          "value": "primary-lightest",
-                          "label": "Background (primary)"
-                        },
-                        {
-                          "value": "primary-lighter",
-                          "label": "Background (secondary)"
-                        }
-                      ]
-                    },
+                      "value": "primary-lighter",
+                      "label": "Background (secondary)"
+                    }
                   ]
                 }
               ]
@@ -105,6 +77,32 @@
                   "required": true
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Styling",
+      "type": "field_group",
+      "fields": [
+        {
+          "id": "text_align",
+          "label": "Text alignment",
+          "type": "select",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
             }
           ]
         }
